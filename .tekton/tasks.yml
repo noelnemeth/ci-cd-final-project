@@ -59,7 +59,7 @@ spec:
         echo "Installing dependencies..."
         npm install
         echo "Running ESLint..."
-        npx eslint src/ tests/ --ext *.js
+        npm run lint $(params.args)
 
 ---
 apiVersion: tekton.dev/v1beta1
@@ -84,4 +84,4 @@ spec:
         echo "Installing dependencies..."
         npm install
         echo "Running Jest tests..."
-        npx jest -v
+        npm test $(params.args)
